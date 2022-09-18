@@ -1,33 +1,19 @@
 package com.example.wordle
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity()  {
-    private val wordToGuess = FourLetterWordList.getRandomFourLetterWord()
     var guessCounter = 0
     var userCurrentGuess = ""
-
-    private fun checkGuess(guess: String) : String {
-        var guess = wordToGuess.uppercase()
-        var result = ""
-        for (i in 0..3) {
-            if (guess[i] == wordToGuess[i]) {
-                result += "O"
-            }
-            else if (guess[i] in wordToGuess) {
-                result += "+"
-            }
-            else {
-                result += "X"
-            }
-        }
-        return result
-    }
+    var wordToGuess = FourLetterWordList.FourLetterWordList.getRandomFourLetterWord()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,14 +37,15 @@ class MainActivity : AppCompatActivity()  {
         val userinputguess = findViewById<EditText>(R.id.UserInput)
         val finalanswer = findViewById<TextView>(R.id.FinalAnswer)
         val guessButton = findViewById<Button>(R.id.SubmitButton)
-
         finalanswer.text = wordToGuess
 
+
         guessButton.setOnClickListener {
+            it.hideKeyboard()
             guessCounter += 1
             userCurrentGuess = userinputguess.text.toString().uppercase()
 
-            if (guessCounter == 1){
+            if (guessCounter == 1) {
                 userinputguess.text.clear()
                 guess1.visibility = View.VISIBLE
                 enteredguess1.text = userCurrentGuess
@@ -68,7 +55,7 @@ class MainActivity : AppCompatActivity()  {
                 enteredguess1check.visibility = View.VISIBLE
             }
 
-            if (guessCounter == 2){
+            else if (guessCounter == 2) {
                 userinputguess.text.clear()
                 guess2.visibility = View.VISIBLE
                 enteredguess2.text = userCurrentGuess
@@ -78,7 +65,7 @@ class MainActivity : AppCompatActivity()  {
                 enteredguess2check.visibility = View.VISIBLE
             }
 
-            if (guessCounter == 3){
+            else if (guessCounter == 3) {
                 userinputguess.text.clear()
                 guess3.visibility = View.VISIBLE
                 enteredguess3.text = userCurrentGuess
@@ -86,18 +73,37 @@ class MainActivity : AppCompatActivity()  {
                 guess3check.visibility = View.VISIBLE
                 enteredguess3check.text = checkGuess(userCurrentGuess)
                 enteredguess3check.visibility = View.VISIBLE
+                finalanswer.visibility = View.VISIBLE
                 guessButton.visibility = View.INVISIBLE
             }
 
-            if (userCurrentGuess == wordToGuess ){
+            if (userCurrentGuess == wordToGuess) {
                 finalanswer.visibility = View.VISIBLE
                 guessButton.visibility = View.INVISIBLE
                 userinputguess.visibility = View.INVISIBLE
             }
 
+        }
+    }
+
+    fun View.hideKeyboard() {
+        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(windowToken, 0)
+    }
+
+        private fun checkGuess(guess: String) : String {
+                var result = ""
+                for (i in 0..3) {
+                    if (guess[i] == wordToGuess[i]) {
+                        result += "O"
+                    } else if (guess[i] in wordToGuess) {
+                        result += "+"
+                    } else {
+                        result += "X"
+                    }
+                }
+                return result
+            }
 
         }
-
-    }
-}
 

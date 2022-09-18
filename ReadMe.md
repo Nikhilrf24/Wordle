@@ -5,8 +5,8 @@ Submitted by: **Nikhil Joshi**
 **Wordle** is an android app that recreates a simple version of the popular word game [Wordle](https://www.nytimes.com/games/wordle/index.html). 
 
 **Instructions**
-    - wordToGuess : String - the target word the user is trying to guess
-    - guess : String - what the user entered as their guess
+    *wordToGuess : String - the target word the user is trying to guess
+    *guess : String - what the user entered as their guess
      
      * Returns a String of 'O', '+', and 'X', where:
      *   'O' represents the right letter in the right place

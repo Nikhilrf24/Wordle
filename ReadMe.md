@@ -4,7 +4,16 @@ Submitted by: **Nikhil Joshi**
 
 **Wordle** is an android app that recreates a simple version of the popular word game [Wordle](https://www.nytimes.com/games/wordle/index.html). 
 
-Time spent: **5** hours spent in total
+**Instructions**
+     *   wordToGuess : String - the target word the user is trying to guess
+     *   guess : String - what the user entered as their guess
+     
+     * Returns a String of 'O', '+', and 'X', where:
+     *   'O' represents the right letter in the right place
+     *   '+' represents the right letter in the wrong place
+     *   'X' represents a letter not in the target word
+
+Time spent: **10** hours spent in total
 
 ## Required Features
 
@@ -15,24 +24,12 @@ The following **required** functionality is completed:
 - [X] **After each guess, user sees the "correctness" of the guess**
 - [X] **After all guesses are taken, user can see the target word displayed**
 
-The following **optional** features are implemented:
-
-- [ ] User can toggle betweeen different word lists
-- [ ] User can see the 'correctness' of their guess through colors on the word 
-- [ ] User sees a visual change after guessing the correct word
-- [ ] User can tap a 'Reset' button to get a new word and clear previous guesses
-- [ ] User will get an error message if they input an invalid guess
-- [ ] User can see a 'streak' record of how many words they've guessed correctly.
-
-The following **additional** features are implemented:
-
-* [ ] List anything else that you can get done to improve the app functionality!
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://user-images.githubusercontent.com/27730208/190835729-fb8d4bcd-12fc-4f7d-8eb3-5f6a1c878e9b.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 

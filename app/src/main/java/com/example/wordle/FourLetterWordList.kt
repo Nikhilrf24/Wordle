@@ -15,5 +15,4 @@ object FourLetterWordList {
             val randomNumber = (0..allWords.size).shuffled().last()
             return allWords[randomNumber].uppercase()
         }
-
-}
+    }

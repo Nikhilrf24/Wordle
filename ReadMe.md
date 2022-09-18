@@ -27,7 +27,7 @@ The following **required** functionality is completed:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://user-images.githubusercontent.com/27730208/190931869-75bf3a9e-0332-4d82-aa6c-82e825cfbc8c.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 ## License

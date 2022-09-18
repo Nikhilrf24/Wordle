@@ -30,12 +30,6 @@ Here's a walkthrough of implemented user stories:
 <img src='' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
-
-## Notes
-
-Describe any challenges encountered while building the app.
-My app is not fully functional. The gradle executed fine but the app did not launch in emulator. Please check my code and let me know how to improve on it.
-
 ## License
 
     Copyright [2022] [Nikhil Joshi]
